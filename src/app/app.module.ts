@@ -7,6 +7,12 @@ import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { EditComponent } from './components/edit/edit.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+import { AlbumService } from './album.service';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +22,13 @@ import { EditComponent } from './components/edit/edit.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AlbumService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
